@@ -1,0 +1,22 @@
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\TopDown.vcxproj.CopyComplete
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\TopDown.exe
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\sfml-graphics-d-2.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\sfml-window-d-2.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\sfml-system-d-2.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\freetyped.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\zlibd1.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\bz2d.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\libpng16d.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\brotlidec.dll
+C:\Users\pedro\Downloads\Analise e Projeto de Algoritmos\Pedro Leonan (2)\TopDown\x64\Debug\brotlicommon.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\TopDown.exe
+C:\Users\pedro\source\repos\TopDown\x64\Debug\TopDown.vcxproj.CopyComplete
+C:\Users\pedro\source\repos\TopDown\x64\Debug\sfml-graphics-d-2.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\sfml-window-d-2.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\sfml-system-d-2.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\freetyped.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\zlibd1.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\bz2d.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\libpng16d.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\brotlidec.dll
+C:\Users\pedro\source\repos\TopDown\x64\Debug\brotlicommon.dll
