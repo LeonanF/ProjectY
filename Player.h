@@ -17,18 +17,30 @@ private:
 	sf::Texture staticTexture;
 	sf::Texture movingTexture;
 	sf::Texture jumpTexture;
+	sf::Texture attackTexture;
 	sf::RenderWindow& gameWindow;
 
 	//Variáveis
 	int currentStaticFrame;
 	int currentMovingFrame;
 	int currentJumpingFrame;
+	int currentAttackingFrame;
 
+	sf::Clock updateTimer;
+	sf::Time deltaTime;
+	sf::Time attackTimer;
+	sf::Time attackCooldown;
+	int windowSizeX;
+	int groundHeight;
 	float playerScale;
+
+	float attackDamage;
+	float attackMultiplier;
 
 	float switchStaticFrameInterval;
 	float switchMovingFrameInterval;
 	float switchJumpingFrameInterval;
+	float switchAttackingFrameInterval;
 
 	int frameHeight;
 	int frameWidth;
@@ -44,7 +56,9 @@ private:
 	bool needToCorrectPosition;
 	bool onGround;
 	bool isWalking;
-
+	bool isAttacking;
+	bool canAttack;
+	bool overFall;
 
 	//Funções privadas
 	void initSprite();
@@ -52,19 +66,22 @@ private:
 	void initVariables();
 	void isTouchingBorderWindow();
 	void updateTextures();
+	void updateCooldown();
 	void gravity();
 
 public:
 
-	Player(sf::RenderWindow& window);
+	Player(sf::RenderWindow& window, int groundH);
 	~Player();
 
 	//Funções públicas
 	void update();
 	void render(sf::RenderTarget& target);
-	void move(std::string direction);
+	void move(std::string direction,  sf::View& gameView);
 	void jump();
+	void attack();
 	bool getOnGround();
+	bool getIsAttacking();
 	void setIsWalking(bool isWalking);
 
 };

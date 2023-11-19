@@ -1,4 +1,32 @@
-﻿  Player.cpp
-  TopDown.vcxproj -> C:\Users\pedro\source\repos\ProjectY\x64\Debug\TopDown.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: O diretório intermediário (x64\Debug\) contém arquivos compartilhados de outro projeto (TopDown.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  Game.cpp
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(57,36): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(67,43): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:             T=unsigned int
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         and
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,100): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:             T=unsigned int
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         and
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(79,73): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(81,21): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(86,76): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(86,76): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(86,76): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(86,76): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(86,76): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(93,27): warning C4244: '=': conversão de 'float' para 'int', possível perda de dados
+  TopDown.vcxproj -> C:\Users\pedro\source\repos\ProjectY\x64\Debug\ProjectY.exe
   'pwsh.exe' não é reconhecido como um comando interno
   ou externo, um programa operável ou um arquivo em lotes.
