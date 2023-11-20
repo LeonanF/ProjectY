@@ -5,25 +5,25 @@
 void Game::initTexture()
 {
 	if (!this->textureLayer1.loadFromFile("Textures/background/background_layer_1.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->textureLayer2.loadFromFile("Textures/background/background_layer_2.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->textureLayer3.loadFromFile("Textures/background/background_layer_3.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->groundTexture.loadFromFile("Textures/tiles/tiles4.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->groundTexture2.loadFromFile("Textures/tiles/tiles3.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->groundTexture3.loadFromFile("Textures/tiles/tiles2.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->shopTexture.loadFromFile("Textures/decorations/shop.png"))
-		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar textura.";
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 }
 
@@ -46,19 +46,17 @@ void Game::initSprite()
 	float scaleY = static_cast<float>(this->window->getSize().y) / this->layer1[1].getLocalBounds().height;
 
 
-	// Usar a menor escala para manter o aspecto original
 	float scale = std::min(scaleX, scaleY);
 
-	// Aplicar a escala mantendo o aspecto original
 	for (int i = 0; i < 2; i++) {
 		this->layer1[i].setScale(scale, scale);
 		this->layer2[i].setScale(scale, scale);
 		this->layer3[i].setScale(scale, scale);
 	}
 
-	std::random_device rd;   // non-deterministic generator
-	std::mt19937 gen(rd());  // to seed mersenne twister.
-	std::uniform_int_distribution<> dist(0, 2); // distribute results between 1 and 6 inclusive.
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dist(0, 2);
 
 	for (int i = 0; i < ceil((this->window->getSize().x * 2)/72); i++) {
 		sf::Sprite ground;
@@ -90,9 +88,17 @@ void Game::initSprite()
 
 void Game::initWindow()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(sf::VideoMode::getDesktopMode()), "TopDown", sf::Style::Fullscreen);
+	this->window = new sf::RenderWindow(sf::VideoMode(sf::VideoMode::getDesktopMode()), "ProjectY", sf::Style::Fullscreen);
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(false);
+
+	if (!this->icon.loadFromFile("logo-icon.png")) {
+		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar icone.";
+	}
+
+	
+	this->window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
 
 	int windowSizeX = this->window->getSize().x;
 

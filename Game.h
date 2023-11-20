@@ -23,6 +23,7 @@ private:
 	sf::Texture textureLayer3;
 	sf::View* camera;
 	sf::Clock timer;
+	sf::Image icon;
 
 	int windowSizeX;
 	float switchShopFrameInterval;
