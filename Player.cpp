@@ -279,3 +279,8 @@ void Player::setIsWalking(bool isWalking)
 {
 	this->isWalking = isWalking;
 }
+
+sf::FloatRect Player::getPlayerBounds()
+{
+	return this->playerSprite.getGlobalBounds();
+}

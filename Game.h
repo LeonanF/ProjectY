@@ -24,13 +24,27 @@ private:
 	sf::View* camera;
 	sf::Clock timer;
 	sf::Image icon;
+		
+	// Variáveis da loja
+	sf::RectangleShape shopBackground;
+	sf::Texture popupTexture;
+	sf::Font font;
+	sf::Text popUpText;
+	sf::RectangleShape shopButton;
+	sf::Texture buttonTexture;
+	sf::Text buttonText;
+	sf::Sprite seller;
+	sf::Texture sellerTexture;
 
 	int windowSizeX;
 	float switchShopFrameInterval;
 	int currentShopFrame;
 
+	bool isOnShop;
+
 	void initTexture();
 	void initSprite();
+	void initPopUp();
 	void initWindow();
 	void initPlayer();
 	void initVariables();
@@ -39,6 +53,7 @@ private:
 	void updateInput();
 	void updateShopTexture();
 	void render();
+	void renderShopPopUp();
 
 public:
 

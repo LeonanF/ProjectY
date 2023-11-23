@@ -2,6 +2,7 @@
 #include <iostream>
 #include <random>
 
+
 void Game::initTexture()
 {
 	if (!this->textureLayer1.loadFromFile("Textures/background/background_layer_1.png"))
@@ -23,6 +24,15 @@ void Game::initTexture()
 		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 	if (!this->shopTexture.loadFromFile("Textures/decorations/shop.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	if (!this->popupTexture.loadFromFile("Textures/gui/popup.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	if (!this->buttonTexture.loadFromFile("Textures/gui/button.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	if (!this->sellerTexture.loadFromFile("Textures/portraits/seller.png"))
 		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
 }
@@ -84,6 +94,52 @@ void Game::initSprite()
 	this->shop.setTextureRect(sf::IntRect(0, 0, 118, 120));
 	this->shop.setPosition(-this->windowSizeX/2, this->window->getSize().y-this->shop.getGlobalBounds().height-this->ground[0].getGlobalBounds().height);
 
+	this->initPopUp();
+
+}
+
+void Game::initPopUp()
+{
+	if (!this->font.loadFromFile("Fonts/font.ttf"))
+		std::cout << "ERROR::GAME::INITPOPUP::Erro ao carregar fonte.";
+
+	sf::Vector2f popUpSize(this->shop.getGlobalBounds().width, 200);
+	sf::FloatRect shopBounds(this->shop.getGlobalBounds());
+
+	this->shopBackground.setSize(popUpSize);
+	this->shopBackground.setTexture(&this->popupTexture);
+	this->shopBackground.setPosition(shopBounds.left, shopBounds.top - popUpSize.y);
+
+	sf::FloatRect backgroundBounds(this->shopBackground.getGlobalBounds());
+
+	this->seller.setTexture(this->sellerTexture);
+	this->seller.setScale(1.5f, 1.5f);
+	this->seller.setPosition(backgroundBounds.left + this->seller.getGlobalBounds().width / 2.f, backgroundBounds.top + this->seller.getGlobalBounds().height / 2.f);
+
+	sf::FloatRect sellerBounds(this->seller.getGlobalBounds());
+
+	this->popUpText.setFont(this->font);
+	this->popUpText.setString("Boas vindas, visitante!\nO que quer comprar? O que quer vender?");
+	this->popUpText.setCharacterSize(16);
+	this->popUpText.setFillColor(sf::Color::Black);
+	this->popUpText.setPosition(this->shopBackground.getPosition().x+25, this->shopBackground.getPosition().y+25+sellerBounds.height+7.f);
+
+	sf::Vector2f popUpButton(popUpSize.x / 5, popUpSize.y / 5);
+
+	this->shopButton.setSize(popUpButton);
+	this->shopButton.setTexture(&this->buttonTexture);
+	this->shopButton.setPosition(backgroundBounds.left+backgroundBounds.width-popUpButton.x*1.5f, backgroundBounds.top+backgroundBounds.height-popUpButton.y*1.5f);
+
+	this->buttonText.setFont(this->font);
+	this->buttonText.setString(L"Espaço");
+	this->buttonText.setCharacterSize(15);
+	this->buttonText.setFillColor(sf::Color::White);
+
+	float centerX = shopButton.getPosition().x + (shopButton.getSize().x - buttonText.getGlobalBounds().width) / 2.0f;
+	float centerY = shopButton.getPosition().y + (shopButton.getSize().y - buttonText.getGlobalBounds().height) / 2.0f - 7.f;
+
+	this->buttonText.setPosition(centerX, centerY);
+
 }
 
 void Game::initWindow()
@@ -117,6 +173,7 @@ void Game::initVariables()
 	this->windowSizeX = this->window->getSize().x;
 	this->switchShopFrameInterval = 0.125f;
 	this->currentShopFrame = 0.f;
+	this->isOnShop = false;
 }
 
 void Game::pollEvents()
@@ -163,6 +220,13 @@ void Game::updateInput()
 		this->player->attack();
 	}
 
+	sf::FloatRect playerBounds = this->player->getPlayerBounds();
+	sf::FloatRect shopBounds = this->shop.getGlobalBounds();
+
+	if (playerBounds.left > shopBounds.left && playerBounds.left + playerBounds.width < shopBounds.left + shopBounds.width)
+		this->isOnShop = true;
+	else
+		this->isOnShop = false;
 }
 
 void Game::updateShopTexture()
@@ -198,6 +262,7 @@ void Game::render()
 		this->window->draw(ground);
 	
 	this->window->draw(this->shop);
+	this->renderShopPopUp();
 
 	this->player->render(*this->window);
 	
@@ -205,6 +270,17 @@ void Game::render()
 	//Exibe o novo frame
 	this->window->display();
 
+}
+
+void Game::renderShopPopUp()
+{
+	if (this->isOnShop) {
+		this->window->draw(this->shopBackground);
+		this->window->draw(this->popUpText);
+		this->window->draw(this->shopButton);
+		this->window->draw(this->buttonText);
+		this->window->draw(this->seller);
+	}
 }
 
 Game::Game()

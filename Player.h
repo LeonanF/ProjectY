@@ -83,6 +83,6 @@ public:
 	bool getOnGround();
 	bool getIsAttacking();
 	void setIsWalking(bool isWalking);
-
+	sf::FloatRect getPlayerBounds();
 };
 
