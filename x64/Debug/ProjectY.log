@@ -1,0 +1,32 @@
+﻿  Game.cpp
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(82,36): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(88,15): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(95,43): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:             T=unsigned int
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         and
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,100): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244: 'argumento': conversão de 'T' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:             T=unsigned int
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         and
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(161,73): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(163,21): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(168,76): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(168,76): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(168,76): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(168,76): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(168,76): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\Game.cpp(175,27): warning C4244: '=': conversão de 'float' para 'int', possível perda de dados
+  ProjectY.vcxproj -> C:\Users\pedro\source\repos\ProjectY\x64\Debug\ProjectY.exe
+  'pwsh.exe' não é reconhecido como um comando interno
+  ou externo, um programa operável ou um arquivo em lotes.

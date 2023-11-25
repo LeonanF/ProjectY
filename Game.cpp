@@ -203,16 +203,23 @@ void Game::updateInput()
 
 	this->player->setIsWalking(false);
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		this->player->move("Left", *this->camera);
-		this->player->setIsWalking(true);
-	}
+	if (!(
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ||
+		sf::Keyboard::isKeyPressed(sf::Keyboard::A) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) ||
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::D) ||
+		sf::Keyboard::isKeyPressed(sf::Keyboard::A) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right)
+		)) {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		this->player->move("Right", *this->camera);
-		this->player->setIsWalking(true);
-	}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			this->player->move("Left", *this->camera);
+			this->player->setIsWalking(true);
+		}
 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+			this->player->move("Right", *this->camera);
+			this->player->setIsWalking(true);
+		}
+	}
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W)) && this->player->getOnGround())
 		this->player->jump();
 	
