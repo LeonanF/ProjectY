@@ -13,6 +13,7 @@ private:
 	sf::Sprite layer2[2];
 	sf::Sprite layer3[2];
 	std::vector<sf::Sprite> ground;
+	std::vector<sf::Sprite> decorations;
 	sf::Sprite shop;
 	sf::Texture shopTexture;
 	sf::Texture groundTexture;
@@ -21,6 +22,11 @@ private:
 	sf::Texture textureLayer1;
 	sf::Texture textureLayer2;
 	sf::Texture textureLayer3;
+	sf::Texture lampTexture;
+	sf::Texture signTexture;
+	std::vector<sf::Texture> grassTexture;
+	std::vector<sf::Texture> fenceTexture;
+	std::vector<sf::Texture> rockTexture;
 	sf::View* camera;
 	sf::Clock timer;
 	sf::Image icon;

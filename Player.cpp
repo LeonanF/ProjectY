@@ -8,7 +8,7 @@ void Player::initSprite()
 
 	const auto playerBounds = this->playerSprite.getGlobalBounds();
 
-	this->playerSprite.setPosition(this->gameWindow.getSize().x / 3.f - windowSizeX, this->gameWindow.getSize().y - playerBounds.height * 1.2f);
+	this->playerSprite.setPosition(this->gameWindow.getSize().x / 3.f - windowSizeX, this->gameWindow.getSize().y - playerBounds.height * 1.3f);
 }
 
 void Player::initTexture()
@@ -35,7 +35,7 @@ void Player::initVariables()
 	this->switchStaticFrameInterval = 0.083f;
 	this->switchMovingFrameInterval = 0.125f;
 	this->switchAttackingFrameInterval = 0.083f;
-	this->switchJumpingFrameInterval = 0.120f;
+	this->switchJumpingFrameInterval = 0.096f;
 
 	this->currentStaticFrame = 0;
 	this->currentMovingFrame = 0;
@@ -49,7 +49,7 @@ void Player::initVariables()
 	this->windowSizeX = this->gameWindow.getSize().x;
 
 	this->movespeed = 5.0f;
-	this->jumpHeight = 15.f;
+	this->jumpHeight = 12.f;
 	this->jumpImpulse = 0.f;
 	this->gravityForce = 0.25f;
 
@@ -70,10 +70,10 @@ void Player::isTouchingBorderWindow()
 	sf::FloatRect spriteBounds = this->playerSprite.getGlobalBounds();
 	sf::Vector2u windowSize = this->gameWindow.getSize();
 
-	if (spriteBounds.top + spriteBounds.height > windowSize.y - this->groundHeight) {
+	if (spriteBounds.top + spriteBounds.height - 3 > windowSize.y - this->groundHeight) {
 		this->jumpImpulse = 0.f;
 		this->onGround = true;
-		this->playerSprite.setPosition(this->playerSprite.getPosition().x, windowSize.y - spriteBounds.height - this->groundHeight);
+		this->playerSprite.setPosition(this->playerSprite.getPosition().x, windowSize.y - spriteBounds.height - this->groundHeight +3);
 	}
 
 	if (spriteBounds.left + (spriteBounds.width / 3.9f) < -1920)

@@ -35,10 +35,50 @@ void Game::initTexture()
 	if (!this->sellerTexture.loadFromFile("Textures/portraits/seller.png"))
 		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
 
+	if (!this->sellerTexture.loadFromFile("Textures/portraits/seller.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	if (!this->lampTexture.loadFromFile("Textures/decorations/lamp.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	if (!this->signTexture.loadFromFile("Textures/decorations/sign.png"))
+		std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	this->fenceTexture.resize(2);
+
+	for (int i = 0; i < 2; i++) {
+		std::string filePath= "Textures/decorations/fence_"+std::to_string(i+1)+".png";
+
+		if (!this->fenceTexture[i].loadFromFile(filePath))
+			std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	}
+
+	this->grassTexture.resize(3);
+
+	for (int i = 0; i < 3; i++) {
+		std::string filePath = "Textures/decorations/grass_" + std::to_string(i + 1) + ".png";
+
+		if (!this->grassTexture[i].loadFromFile(filePath))
+			std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	}
+	
+	this->rockTexture.resize(3);
+
+	for (int i = 0; i < 3; i++) {
+		std::string filePath = "Textures/decorations/rock_" + std::to_string(i + 1) + ".png";
+
+		if (!this->rockTexture[i].loadFromFile(filePath))
+			std::cout << "ERROR::GAME::INITTEXTURE::Erro ao carregar textura.";
+
+	}
 }
 
 void Game::initSprite()
 {
+
+	//Background sprite
 	this->layer1[0].setTexture(this->textureLayer1);
 	this->layer1[1].setTexture(this->textureLayer1);
 	this->layer1[1].setPosition(layer1[0].getPosition().x - window->getSize().x, 0);
@@ -64,6 +104,7 @@ void Game::initSprite()
 		this->layer3[i].setScale(scale, scale);
 	}
 
+	//Ground sprite
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dist(0, 2);
@@ -84,9 +125,11 @@ void Game::initSprite()
 		this->ground.push_back(ground);
 	}
 
+	//Correção do último ground
 	auto lastGround = ceil((this->window->getSize().x * 2) / 72)-1;
 	this->ground[lastGround].setTextureRect(sf::IntRect(48, 0, 48, 24));
 
+	//Shop sprite
 	auto shopScale = 3.2f;
 
 	this->shop.setTexture(this->shopTexture);
@@ -95,6 +138,42 @@ void Game::initSprite()
 	this->shop.setPosition(-this->windowSizeX/2, this->window->getSize().y-this->shop.getGlobalBounds().height-this->ground[0].getGlobalBounds().height);
 
 	this->initPopUp();
+
+	//Decorations sprite
+
+	std::uniform_int_distribution<> pos(50, 150);
+	std::uniform_int_distribution<> grassType(0, 2);
+	std::uniform_int_distribution<> rockType(0, 2);
+
+	int i = -this->windowSizeX;
+
+	while (i < this->windowSizeX) {
+		
+		sf::Sprite sprite;
+
+		int randomDecoration = std::rand() % 7;
+		if (randomDecoration == 0) {
+			int textureIndex = rockType(gen);
+			sprite.setTexture(this->rockTexture[textureIndex]);
+		}
+		else {
+			int textureIndex = grassType(gen);
+			sprite.setTexture(this->grassTexture[textureIndex]);
+		}
+
+		int actualPos = i+pos(gen);
+
+		i = actualPos;
+
+
+		sprite.setPosition(actualPos,this->window->getSize().y-this->ground[0].getGlobalBounds().height-sprite.getGlobalBounds().height);
+
+		sprite.setScale(1.5f, 1.5f);
+
+		this->decorations.push_back(sprite);
+
+	}
+
 
 }
 
@@ -265,14 +344,17 @@ void Game::render()
 	this->window->draw(this->layer3[0]);
 	this->window->draw(this->layer3[1]);
 
+	for (auto decoration : this->decorations)
+		this->window->draw(decoration);
+
 	for(auto ground : this->ground)
 		this->window->draw(ground);
+
 	
 	this->window->draw(this->shop);
 	this->renderShopPopUp();
 
 	this->player->render(*this->window);
-	
 
 	//Exibe o novo frame
 	this->window->display();
