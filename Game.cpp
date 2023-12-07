@@ -224,8 +224,7 @@ void Game::initPopUp()
 void Game::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(sf::VideoMode::getDesktopMode()), "ProjectY", sf::Style::Fullscreen);
-	this->window->setFramerateLimit(60);
-	this->window->setVerticalSyncEnabled(false);
+	this->window->setVerticalSyncEnabled(true);
 
 	if (!this->icon.loadFromFile("logo-icon.png")) {
 		std::cout << "ERROR::GAME::INITWINDOW::Erro ao carregar icone.";
