@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "Pet.h"
 
 struct MoveMultiplier {
 	float moveRight = 1.0f;
@@ -19,6 +20,7 @@ private:
 	sf::Texture jumpTexture;
 	sf::Texture attackTexture;
 	sf::RenderWindow& gameWindow;
+	Pet* fox;
 
 	//Variáveis
 	int currentStaticFrame;
@@ -64,6 +66,7 @@ private:
 	void initSprite();
 	void initTexture();
 	void initVariables();
+	void initPet();
 	void isTouchingBorderWindow();
 	void updateTextures();
 	void updateCooldown();

@@ -1,0 +1,14 @@
+﻿  Pet.cpp
+C:\Users\pedro\source\repos\ProjectY\Pet.cpp(109,48): warning C4244: '=': conversão de 'T' para 'float', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\Pet.cpp(109,48): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\Pet.cpp(109,48): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\Pet.cpp(109,48): warning C4244:             T=unsigned int
+C:\Users\pedro\source\repos\ProjectY\Pet.cpp(109,48): warning C4244:         ]
+  Gerando código
+  2 of 288 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finalizada a geração de código
+  ProjectY.vcxproj -> C:\Users\pedro\source\repos\ProjectY\x64\Release\ProjectY.exe
+  'pwsh.exe' não é reconhecido como um comando interno
+  ou externo, um programa operável ou um arquivo em lotes.

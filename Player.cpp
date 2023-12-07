@@ -35,7 +35,7 @@ void Player::initVariables()
 	this->switchStaticFrameInterval = 0.083f;
 	this->switchMovingFrameInterval = 0.125f;
 	this->switchAttackingFrameInterval = 0.083f;
-	this->switchJumpingFrameInterval = 0.096f;
+	this->switchJumpingFrameInterval = 0.1f;
 
 	this->currentStaticFrame = 0;
 	this->currentMovingFrame = 0;
@@ -49,9 +49,9 @@ void Player::initVariables()
 	this->windowSizeX = this->gameWindow.getSize().x;
 
 	this->movespeed = 5.0f;
-	this->jumpHeight = 12.f;
+	this->jumpHeight = 6.f;
 	this->jumpImpulse = 0.f;
-	this->gravityForce = 0.25f;
+	this->gravityForce = 0.125f;
 
 	this->deltaTime = this->updateTimer.restart();
 	this->attackCooldown = sf::seconds(2.f);
@@ -65,6 +65,11 @@ void Player::initVariables()
 
 }
 
+void Player::initPet()
+{
+	this->fox = new Pet(this->playerSprite.getGlobalBounds(), this->groundHeight, this->gameWindow);
+}
+
 void Player::isTouchingBorderWindow()
 {
 	sf::FloatRect spriteBounds = this->playerSprite.getGlobalBounds();
@@ -73,6 +78,7 @@ void Player::isTouchingBorderWindow()
 	if (spriteBounds.top + spriteBounds.height - 3 > windowSize.y - this->groundHeight) {
 		this->jumpImpulse = 0.f;
 		this->onGround = true;
+		this->fox->isOnFloor();
 		this->playerSprite.setPosition(this->playerSprite.getPosition().x, windowSize.y - spriteBounds.height - this->groundHeight +3);
 	}
 
@@ -188,10 +194,12 @@ Player::Player(sf::RenderWindow& window, int groundH)
 	this->initVariables();
 	this->initTexture();
 	this->initSprite();
+	this->initPet();
 }
 
 Player::~Player()
 {
+	delete this->fox;
 }
 
 void Player::update()
@@ -206,10 +214,12 @@ void Player::update()
 	this->updateTextures();
 	this->isTouchingBorderWindow();
 	this->gravity();
+	this->fox->update(this->isWalking);
 }
 
 void Player::render(sf::RenderTarget& target)
 {
+	this->fox->render(target);
 	target.draw(this->playerSprite);
 }
 
@@ -219,6 +229,7 @@ void Player::move(std::string direction, sf::View& gameView)
 	if (direction == "Left" && !this->isAttacking) {
 		if (!this->isAttacking) {
 			this->playerSprite.move(this->movespeed * this->speedMultiplier.moveLeft, 0);
+			this->fox->move(this->movespeed * this->speedMultiplier.moveLeft);
 
 			if (gameView.getCenter().x > -this->windowSizeX / 2 && this->playerSprite.getPosition().x < gameView.getCenter().x)
 				gameView.move(this->movespeed * this->speedMultiplier.moveLeft, 0);
@@ -227,6 +238,7 @@ void Player::move(std::string direction, sf::View& gameView)
 
 			if (needToCorrectPosition) {
 				this->playerSprite.setPosition(this->playerSprite.getPosition().x + this->frameWidth * 2.f, this->playerSprite.getPosition().y);
+				this->fox->setPosition(this->playerSprite.getPosition().x, "Left");
 				this->needToCorrectPosition = false;
 			}
 
@@ -236,13 +248,14 @@ void Player::move(std::string direction, sf::View& gameView)
 	if (direction == "Right") {
 		if (!this->isAttacking) {
 			this->playerSprite.move(this->movespeed * this->speedMultiplier.moveRight, 0);
-
+			this->fox->move(this->movespeed * this->speedMultiplier.moveRight);
 			if (gameView.getCenter().x<this->windowSizeX / 2 && this->playerSprite.getPosition().x > gameView.getCenter().x)
 				gameView.move(this->movespeed * this->speedMultiplier.moveRight, 0);
 			this->playerSprite.setScale(this->playerScale, this->playerScale);
 
 			if (!needToCorrectPosition) {
 				this->playerSprite.setPosition(this->playerSprite.getPosition().x - this->frameWidth * 2.f, this->playerSprite.getPosition().y);
+				this->fox->setPosition(this->playerSprite.getPosition().x, "Right");
 				this->needToCorrectPosition = true;
 			}
 		}
@@ -255,6 +268,7 @@ void Player::jump()
 	this->jumpImpulse = this->jumpHeight;
 	this->onGround = false;
 	this->currentJumpingFrame = 0;
+	this->fox->jump();
 }
 
 void Player::attack()
