@@ -1,4 +1,97 @@
-﻿  Game.cpp
-  ProjectY.vcxproj -> C:\Users\USUARIO\source\repos\ProjectY\x64\Debug\ProjectY.exe
+﻿  TileMap.cpp
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55): warning C4244:         ]
+      C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,55):
+      o contexto de instanciação do modelo (o mais antigo primeiro) é
+          C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(104,5):
+          consulte a referência à instanciação 'void TileMap::loadTile<std::vector<tmx::Tileset,std::allocator<tmx::Tileset>>,tmx::Vector2u,T,T>(const tmx::Layer::Ptr &,const _T0 &,const _T1 &,const _T2 &,const _T3 &)' do modelo que está sendo compilada
+          with
+          [
+              T=unsigned int,
+              _T0=std::vector<tmx::Tileset,std::allocator<tmx::Tileset>>,
+              _T1=tmx::Vector2u,
+              _T2=unsigned int,
+              _T3=unsigned int
+          ]
+  
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,39): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,39): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,39): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,39): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(35,39): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,61): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,61): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,61): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,61): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,61): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,45): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,45): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,45): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,45): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(36,45): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,67): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,67): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,67): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,67): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,67): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,45): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,45): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,45): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,45): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(37,45): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,61): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,61): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,61): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,61): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,61): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,39): warning C4244: 'argumento': conversão de 'unsigned int' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,39): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,39): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,39): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(38,39): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,57): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,57): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,57): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,57): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,57): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,41): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,41): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,41): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,41): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(40,41): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,63): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,63): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,63): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,63): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,63): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,47): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,47): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,47): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,47): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(41,47): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,69): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,69): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,69): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,69): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,69): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,47): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,47): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,47): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,47): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(42,47): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,63): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,63): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,63): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,63): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,63): warning C4244:         ]
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,41): warning C4244: 'argumento': conversão de 'uint32_t' para 'T', possível perda de dados
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,41): warning C4244:         with
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,41): warning C4244:         [
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,41): warning C4244:             T=float
+C:\Users\pedro\source\repos\ProjectY\TileMap.cpp(43,41): warning C4244:         ]
+  ProjectY.vcxproj -> C:\Users\pedro\source\repos\ProjectY\x64\Debug\ProjectY.exe
   'pwsh.exe' não é reconhecido como um comando interno
   ou externo, um programa operável ou um arquivo em lotes.

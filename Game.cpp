@@ -28,12 +28,27 @@ void Game::update()
 void Game::render()
 {
 	window.clear();
+	tilemap.draw(window, sf::RenderStates::Default);
 	window.display();
 }
 
 Game::Game()
 	: window(sf::VideoMode::getDesktopMode(), "ProjectY", sf::Style::Fullscreen)
 {
+	window.setVerticalSyncEnabled(true);
+
+	if (!tilemap.loadMap("./assets/maps/Mapa.tmx")) {
+		std::cerr << "ERROR::GAME::LOADMAP\n";
+		exit(EXIT_FAILURE);
+	}
+
+	if (!tilemap.load()) {
+		std::cerr << "ERROR::GAME::LOADTILEMAP\n";
+		exit(EXIT_FAILURE);
+	}
+
+	
+
 }
 
 Game::~Game()
